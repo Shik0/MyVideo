@@ -1,2 +1,4 @@
 # env files contains secret data and should not be synced to the public repo
 .env
+.sqlite3
+.ts
