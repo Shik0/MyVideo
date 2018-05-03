@@ -1,6 +1,6 @@
 Download stream video from myvideo.az.
 
-The project is in "half-working" status. It means that, in current status we can download videos from myvideo.az streaming portal. But, login and register forms are not work yet.
+The project is in "half-working" status. It means that in current status we can download videos from myvideo.az streaming portal. But, login and register forms are not working yet.
 
 Will be updated soon.
 
