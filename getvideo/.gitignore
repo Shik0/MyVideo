@@ -1,0 +1,6 @@
+# ignore download scripts
+# download_script is the main file used in project to download the video from myvideo
+download_script.py
+
+#merge file is old version of the file
+mergets.py
