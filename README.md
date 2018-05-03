@@ -12,4 +12,4 @@ To download video we need four parameters:
 
   After clicking to Download button the selected video will be downloaded.
 
-![index page (initial version)](https://www.dropbox.com/s/qh69peqa76jnnjx/myvideo_index.png?dl=1)
+![index page](https://raw.githubusercontent.com/Shik0/MyVideo/master/images/myvideo_index.png)
