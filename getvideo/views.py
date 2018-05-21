@@ -25,8 +25,8 @@ def index(request):
                     args['vfull_playlist'] = VideoURL.objects.get(url_code = 'playlist').video_url
                     args['vdownload_url'] = VideoURL.objects.get(url_code = 'dowloadList').video_url
                     args['username'] = request.user.username
-                    dc.video_download(*args.values())
-                    context = {'ok':'Download Completed!'}
+                    fileName = dc.video_download(*args.values())
+                    context = {'form':form}
                     return render(request,'getvideo/index.html',context,)
                 else:
                     context = {'form':form}
