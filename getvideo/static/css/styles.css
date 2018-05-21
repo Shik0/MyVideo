@@ -21,7 +21,7 @@ background-color: #eceeef;
 .tab-content{
     background-color:#eceeef;
     padding-top: 0.5em;
-    
+
 }
 
 .nav-tabs > li > a:hover{
@@ -34,7 +34,7 @@ background-color: #eceeef;
 
 .li > nav-item {
   background-color:#eceeef;
-  
+
 }
 
 .nav-link {
@@ -42,7 +42,5 @@ background-color: #eceeef;
 }
 
 .nav-link>active {
-  background-color:#eceeef;  
+  background-color:#eceeef;
 }
-
-

@@ -3,11 +3,12 @@
 {% block content %}
 
 <div class="jumbotron jumbotron-fluid"> <!-- start of jumbotron -->
-{{uname}}
 {% if ok %}
 {{ok}}<br>
 <a href= "{% url 'index' %}"> Home page </a>
+
 {% endif %}
+{{aa}}
 <div class="container">     <!-- start of main container -->
 <div class="row">   <!-- start of row container -->
 <div class="col-md-6"> <!-- start of left form -->
@@ -53,7 +54,7 @@
 <div class="form-group row">
 <div class="col-md-8">
 {% if form %}
-<button type="submit" class="btn btn-primary btn-block active" name = "download">Download</button>
+<button type="submit" class="btn btn-primary btn-block" name = "download">Download</button>
 {% endif %}
 </div>
 </div>
@@ -62,7 +63,8 @@
 
 <div class="col-md-6">  <!-- start of right form -->
 {% if user.is_authenticated %} <!-- start of user is_authenticated -->
-{% include "registration/logged_user_information.html"%}
+<li>User: {{ user.get_username }}</li>
+<li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
 {% else %}
 {% if not ok %}
   <ul class="nav nav-tabs col-md-8" role="tablist"> <!-- start of tabs -->
@@ -77,14 +79,20 @@
 <div id="login" class="container tab-pane active">  <!-- start of login forn -->
 <form action="{% url 'login' %}" method="post">
 {% csrf_token %}
+{% if login_user_name_error %}
+<small class="text-danger"> {{ login_user_name_error }} </small>
+{% endif %}
 <div class="form-group row">
 <div class="col-md-8">
-{{ login_form.username }}
+{{ login_form.user_name }}
 </div>
 </div>
+{% if login_user_password_error %}
+<small class="text-danger"> {{ login_user_password_error }} </small>
+{% endif %}
 <div class="form-group row">
 <div class="input-group date col-md-8">
-{{ login_form.password }}
+{{ login_form.user_password }}
 </div>
 </div>
 <div class="form-group row">
@@ -127,7 +135,7 @@
 <div class="form-group row">
 <div class="col-md-8">
 {% if register_form %}
-<button type="submit" class="btn btn-primary btn-block" value="register" name="register">Register</button>
+<button type="submit" class="btn btn-primary btn-block">Register</button>
 {% endif %}
 </div>
 </div>
