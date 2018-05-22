@@ -1,5 +1,4 @@
 from django.db import models
-from django.conf import settings
 
 # Create your models here.
 
@@ -33,8 +32,9 @@ class VideoURL(models.Model):
 
 class VideoHistory(models.Model):
     channel_short = models.CharField(max_length = 20, help_text = "TV channel short name")
-    video_datetime = models.DateTimeField(auto_now=True, help_text = "Download date and time")
-    video_path = models.FilePathField(path = settings.MEDIA_ROOT, match="*.ts", allow_folders = True, recursive=True , help_text = "Video path")
+    video_datetime = models.DateTimeField(auto_now=False, help_text = "Download date and time")
+    video_path = models.CharField(max_length = 255, help_text = "Video path", blank = True)
+    video_owner = models.CharField(max_length = 30, help_text = "TV channel short name", blank = True)
 
     def __str__(self):
         return "{0} {1}".format(self.channel_short, self.video_datetime)

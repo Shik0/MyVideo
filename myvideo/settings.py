@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -143,4 +144,4 @@ LOGIN_REDIRECT_URL = '/'
 
 # main path for media staticfiles
 MEDIA_ROOT = PROJECT_DIR.parent.child('media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'

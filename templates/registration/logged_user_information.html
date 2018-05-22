@@ -1,6 +1,12 @@
 <p class="font-weight-normal">Hello, {{ user.get_username }}<small><a href="{% url 'logout'%}?next={{request.path}}"> (Logout)</a></small></p>
 <dl>
-  <dt class="h5">Download History: </dt>
-  <dd>- black hot drink</dd>
-  <dd>- black hot drink</dd>
+  <dt class="h5">Download History (last 5): </dt>
+  {% if videoHist %}
+  {%for items in videoHist%}
+  <dd class="font-weight-normal">- {{items.channel_short}} {{items.video_datetime}} <a href="../{{items.video_path}} " >
+    <small class="text-blue">Download</small></a></dd>
+  {% endfor %}
+  {% else %}
+  <small class="text-muted">Video list is empty</small>
+  {% endif %}
 </dl>
