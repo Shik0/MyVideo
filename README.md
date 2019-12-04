@@ -7,7 +7,7 @@ To download video we need four parameters:
   * Start time
   * End time
 
-  After clicking to Download button the selected video will be downloaded.
+  After clicking on Download button the selected video will be downloaded.
 
 ![index page](https://raw.githubusercontent.com/Shik0/MyVideo/master/images/myvideo_index.png)
 
